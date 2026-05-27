@@ -17,6 +17,8 @@ fun ContextMenuDialog(
     onDelete: () -> Unit,
     onExport: (() -> Unit)? = null
 ) {
+    var showDeleteConfirm by rememberSaveable { mutableStateOf(false) }
+
     AlertDialog(
         onDismissRequest = onDismiss,
         title = { Text("选项") },
@@ -30,10 +32,10 @@ fun ContextMenuDialog(
                 ) {
                     Text("重命名")
                 }
-                
+
                 TextButton(
                     onClick = {
-                        onDelete()
+                        showDeleteConfirm = true
                         onDismiss()
                     },
                     colors = ButtonDefaults.textButtonColors(
@@ -42,7 +44,7 @@ fun ContextMenuDialog(
                 ) {
                     Text("删除")
                 }
-                
+
                 if (onExport != null) {
                     TextButton(
                         onClick = {
@@ -58,12 +60,6 @@ fun ContextMenuDialog(
         confirmButton = {},
         dismissButton = {}
     )
-}
-            onClick = {
-                showDeleteConfirm = true
-            }
-        )
-    }
 
     if (showDeleteConfirm) {
         DeleteConfirmationDialog(
@@ -91,9 +87,7 @@ fun DeleteConfirmationDialog(
         text = { Text("此操作不可撤销，确定要删除吗？") },
         confirmButton = {
             TextButton(
-                onClick = {
-                    onConfirm()
-                },
+                onClick = onConfirm,
                 colors = ButtonDefaults.textButtonColors(
                     contentColor = MaterialTheme.colorScheme.error
                 )
