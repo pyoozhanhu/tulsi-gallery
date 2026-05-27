@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission
+        android:name="android.permission.REORDER_TASKS"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.READ_MEDIA_IMAGES"
+        android:minSdkVersion="33" />
+    <uses-permission
+        android:name="android.permission.READ_MEDIA_VIDEO"
+        android:minSdkVersion="33" />
+    <uses-permission
+        android:name="android.permission.MANAGE_MEDIA"
+        android:minSdkVersion="31"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:enableOnBackInvokedCallback="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Gallery.Splashscreen"
+        android:windowSoftInputMode="adjustResize"
+        tools:targetApi="33">
+
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize|density|screenLayout"
+            android:exported="true"
+            android:theme="@style/Theme.Gallery">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".compose.single_photo.OpenWithView"
+            android:configChanges="orientation|screenSize|density|screenLayout"
+            android:exported="true"
+            android:theme="@style/Theme.Gallery">
+
+            <intent-filter android:label="Open with Tulsi Gallery">
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
+
+                <data android:mimeType="image/*" />
+                <data android:mimeType="video/*" />
+                <data android:scheme="content" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.aks_labs.tulsi.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+
+        <provider
+            android:name=".mediastore.content_provider.LavenderContentProvider"
+            android:authorities="com.aks_labs.tulsi.content_provider"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!-- OCR Notification Receiver -->
+        <receiver
+            android:name=".ocr.OcrNotificationReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.aks_labs.tulsi.OCR_PAUSE" />
+                <action android:name="com.aks_labs.tulsi.OCR_RESUME" />
+                <action android:name="com.aks_labs.tulsi.OCR_VIEW_PROGRESS" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Devanagari OCR Notification Receiver -->
+        <receiver
+            android:name=".ocr.DevanagariOcrNotificationReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.aks_labs.tulsi.ocr.devanagari.PAUSE" />
+                <action android:name="com.aks_labs.tulsi.ocr.devanagari.RESUME" />
+                <action android:name="com.aks_labs.tulsi.ocr.devanagari.CANCEL" />
+                <action android:name="com.aks_labs.tulsi.ocr.devanagari.VIEW_PROGRESS" />
+            </intent-filter>
+        </receiver>
+
+        <!-- OCR Foreground Service -->
+        <service
+            android:name=".ocr.OcrForegroundService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+    </application>
+</manifest>

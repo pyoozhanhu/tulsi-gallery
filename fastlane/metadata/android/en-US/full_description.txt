@@ -1,0 +1,50 @@
+✨ GALLERY - AI-POWERED PHOTO MANAGEMENT ✨
+
+Gallery is a beautiful, feature-rich photo gallery app that combines cutting-edge AI capabilities with elegant design while respecting your privacy. With offline OCR text search, intelligent organization, and zero data collection, it's the gallery app your memories deserve.
+
+🔍 OFFLINE AI-POWERED SEARCH
+• Text Recognition - Find photos by text content using offline AI
+• Multi-Language Support - Latin scripts (English, Spanish, French, German, Italian, Portuguese) and Devanagari scripts (Hindi, Marathi, Nepali, Sanskrit)
+• Smart Text Selection - Google Lens-style text selection with OCR-detected regions
+• Background Processing - OCR runs even when app is closed with real-time progress
+• Instant Results - Lightning-fast search through extracted text
+
+🎨 BEAUTIFUL INTERFACE
+• Floating Navigation - Elegant bottom app bar with smooth shrink animations
+• Dynamic Status Bar - Automatically hides during browsing for immersive experience
+• Smooth Animations - Buttery-smooth transitions with Material Design patterns
+• Intuitive Layout - Three-column grid with configurable date grouping
+• Dark/Light Themes - Adapts to your system preference
+
+📱 POWERFUL FEATURES
+• Google Lens Integration - One-tap visual search for object identification
+• Advanced Text Selection - Native Android text selection with word boundaries
+• Smart Organization - Toggle between grid and date-grouped views
+• Secure Folder - Strong encryption for private photos
+• Comprehensive Search - Search by filename, date, or extracted text
+• Album Management - Create and customize albums with drag selection
+• Trash Recovery - Recover accidentally deleted photos
+• Metadata Viewer - Detailed photo information and EXIF data
+
+🔒 PRIVACY FIRST
+• No Data Collection - Zero telemetry or analytics
+• Offline Processing - All OCR and AI features work completely offline
+• No Internet Required - Except for optional Google Lens integration
+• Open Source - Fully transparent and auditable code
+
+⚡ PERFORMANCE OPTIMIZED
+• Background OCR - Processes images even when app is closed
+• Efficient Storage - Optimized database with full-text search
+• Battery Friendly - Smart processing that respects device resources
+• Wide Compatibility - Works on Android 11+ devices
+
+🆕 NEW IN v1.1.0
+• Offline OCR text search with dual language support
+• Google Lens-style text selection mode
+• Background OCR processing with progress tracking
+• Enhanced UI with dynamic status bar hiding
+• Improved scrolling animations and Material Design
+
+Gallery is a fork of LavenderPhotos, enhanced with cutting-edge AI features and modern UI improvements. This app is open source software licensed under the GNU General Public License v3.0.
+
+The complete source code is available at: https://github.com/AKS-Labs/Tulsi

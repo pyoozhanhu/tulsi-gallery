@@ -1,0 +1,78 @@
+Categories:
+  - Multimedia
+License: GPL-3.0-or-later
+AuthorName: AKS Labs
+AuthorEmail: akslabs.tech@gmail.com
+SourceCode: https://github.com/AKS-Labs/Tulsi
+IssueTracker: https://github.com/AKS-Labs/Tulsi/issues
+
+AutoName: Tulsi Gallery App
+Description: |-
+  <b>Gallery - AI-Powered Photo Management with Privacy</b>
+
+  Gallery is a beautiful, feature-rich photo gallery app that combines elegant design with powerful AI capabilities while respecting your privacy. With offline OCR text search, intelligent organization, and zero data collection, it's the gallery app your memories deserve.
+
+  <b>🔍 Offline AI-Powered Search</b>
+  • <b>Text Recognition</b> - Find photos by text content using offline AI
+  • <b>Multi-Language Support</b> - Latin scripts (English, Spanish, French, German, Italian, Portuguese) and Devanagari scripts (Hindi, Marathi, Nepali, Sanskrit)
+  • <b>Smart Text Selection</b> - Google Lens-style text selection with OCR-detected regions, drag/tap selection, and clipboard copy
+  • <b>Background Processing</b> - OCR runs in background even when app is closed, with real-time progress updates
+  • <b>Instant Results</b> - Lightning-fast search through extracted text with full-text search capabilities
+
+  <b>🎨 Beautiful Interface</b>
+  • <b>Floating Navigation</b> - Elegant bottom app bar with smooth shrink animations during scrolling
+  • <b>Dynamic Status Bar</b> - Automatically hides during photo browsing and text selection for immersive experience
+  • <b>Smooth Animations</b> - Buttery-smooth transitions with Material Design patterns
+  • <b>Intuitive Layout</b> - Three-column grid with configurable date grouping
+  • <b>Dark/Light Themes</b> - Adapts to your system preference
+
+  <b>📱 Powerful Features</b>
+  • <b>Google Lens Integration</b> - One-tap visual search for object identification and text translation
+  • <b>Advanced Text Selection</b> - Native Android text selection with word boundary detection and context menus
+  • <b>Smart Organization</b> - Toggle between grid and date-grouped views with persistent preferences
+  • <b>Secure Folder</b> - Strong encryption for private photos
+  • <b>Comprehensive Search</b> - Search by filename, date, or extracted text content
+  • <b>Album Management</b> - Create and customize albums with drag selection support
+  • <b>Trash Recovery</b> - Recover accidentally deleted photos
+
+  <b>🔒 Privacy First</b>
+  • <b>No Data Collection</b> - Zero telemetry or analytics
+  • <b>Offline Processing</b> - All OCR and AI features work completely offline
+  • <b>No Internet Required</b> - Except for optional Google Lens integration
+  • <b>Open Source</b> - Fully transparent and auditable code
+
+  <b>⚡ Performance Optimized</b>
+  • <b>Background OCR</b> - Processes images even when app is closed using WorkManager
+  • <b>Efficient Storage</b> - Optimized database with FTS (Full-Text Search) for instant results
+  • <b>Battery Friendly</b> - Smart processing that respects device resources
+  • <b>Wide Compatibility</b> - Works on Android 11+ devices
+
+  Gallery is a fork of LavenderPhotos, enhanced with cutting-edge AI features and modern UI improvements. This app is open source software licensed under the GNU General Public License v3.0.
+
+RepoType: git
+Repo: https://github.com/AKS-Labs/Tulsi.git
+
+Builds:
+  - versionName: v0.9.8-beta
+    versionCode: 100
+    commit: v0.9.8-beta
+    subdir: app
+    gradle:
+      - yes
+  - versionName: v1.0.0
+    versionCode: 102
+    commit: v1.0.0
+    subdir: app
+    gradle:
+      - yes
+  - versionName: v1.1.0
+    versionCode: 103
+    commit: v1.1.0
+    subdir: app
+    gradle:
+      - yes
+
+AutoUpdateMode: Version
+UpdateCheckMode: Tags
+CurrentVersion: v1.1.0
+CurrentVersionCode: 103
